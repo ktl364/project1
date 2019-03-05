@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--
+Name: Kevin Le
+Date Created: 02/25/19
+Most recent revision: 03/04/19
+-->
+
+<html lang="en">
+      <head>
+            <meta charset="utf-8">
+            <meta name="vietport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <title>Menu</title>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+            <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Nunito" rel="stylesheet">
+            <!-- link to google icon for home icon-->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <!--Apply all styles for the menu in internal style sheets.-->
+            <!--Make sure that the menu item names are larger than their descriptions.-->
+            <!--Style bev table to match your site's look and feel.-->
+            <style>
+                th {
+                  font-size: 1.2em;
+                }
+
+                .bev {
+                  border: 1px solid #0d1f2d;
+                  padding: 5px 10px;
+                }
+
+                .bev td, .bev th  {
+                  padding: 10px 200px 15px 10px;
+                  text-align: left;
+                }
+
+                .bev tr:nth-child(odd)  {
+                  background-color: #f8f4f1;
+                }
+
+                .bev tr:nth-child(even)  {
+                  background-color: #586376;
+                  color: #fef9ff;
+                }
+
+                table {
+                  margin: auto;
+                  margin-top: 30px;
+                }
+
+                .row {
+                  text-align: center;
+                  padding-top: 20px;
+                  padding-bottom: 20px;
+                }
+
+            </style>
+      </head>
+
+      <body>
+        <!-- Make sure that users who have JavaScript disabled know that this site is best viewed with JavaScript enabled.-->
+        <noscript>
+            <div style="border: 1px solid #4a5363; padding: 10px">
+              <span style="color:red">JavaScript is not enabled and this site is best viewed with JavaScript enabled!</span>
+            </div>
+        </noscript>
+        
+        <div class="container-fluid">
+            <main>
+                  <!--carousel w/ jumbotron-->
+                  <div id="carousel" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner">
+                          <div class="carousel-item active">
+                              <section class="jumbotron">
+                                  <h1>BIG NEWS!</h1>
+                                  <h2>The Cozy Grill is opening a second location!</h2>
+                              </section>
+                          </div>
+                          <div class="carousel-item">
+                              <section class="jumbotron">
+                                  <h1>New this season!</h1>
+                                  <h2>We're rolling out our seasonal menu, with special options for this season.</h2>
+                              </section>
+                          </div>
+                          <div class="carousel-item">
+                              <section class="jumbotron">
+                                  <h1>Drink of the Month:</h1>
+                                  <h2>SG Special Brew</h2>
+                              </section>
+                          </div>
+                      </div>
+                  </div>
+
+
+                  <header>
+                      <h1>The Cozy Grill</h1>
+                  </header>
+
+                  <!--Style the site navigation so that you are using either tabs or pills.-->
+                  <nav>
+                       <a class="btn badge-pill" href="index.html"><i class="material-icons md-dark">home</i></a>
+                       <a class="btn badge-pill" href="menu.html">Menu</a>
+                       <a class="btn badge-pill" href="contact.html">Contact Us</a>
+                       <div class="clear-float"></div>
+                  </nav>
+
+                  <!--The menu items should stack well, with no overlapping.-->
+                  <section>
+                       <article id="menu">
+                            <div class="row">
+                                <table class="col-lg-4 col-md-6">
+                                    <tr><th>Burger and Fries</th></tr>
+                                    <tr><td>An American classic!<br />
+                                    Your choice - with or without cheese<br />
+                                    Pickle, onion, tomato, and lettuce<br />
+                                    Served with our famous thick-cut french fries<br /></td></tr>
+                                    <tr><td>$7.95</td></tr>
+                                </table>
+                                <table class="col-lg-4 col-md-6">
+                                    <tr><th>Hot Dog and Chips</th></tr>
+                                    <tr><td>A Summer Classic!<br />
+                                    Your choice - white or wheat bun<br />
+                                    Relish, mustard, and ketchup<br />
+                                    Served with our house-made chips<br /></td></tr>
+                                    <tr><td>$7.95</td></tr>
+                                </table>
+                                <table class="col-lg-4 col-md-6">
+                                    <tr><th>Italian Sausage and Peppers</th></tr>
+                                    <tr><td>An All-Time Favorite!<br />
+                                    Your choice - mild or spicy Cole Slaw<br />
+                                    Served with garlic mashers<br /></td></tr>
+                                    <tr><td>$10.95</td></tr>
+                            </div>
+                            <div class="row">
+                                <table class="col-lg-4 col-md-6">
+                                    <tr><th>Tenderloin Sandwich and Chips</th></tr>
+                                    <tr><td>Really Hits the Spot!<br />
+                                    Plain or Sesame Seed Bun<br />
+                                    Pickle, onion, tomato, and lettuce<br />
+                                    Served with our house-made chips<br /></td></tr>
+                                    <tr><td>$8.95</td></tr>
+                                </table>
+                                <table class="col-lg-4 col-md-6">
+                                    <tr><th>House Salad</th></tr>
+                                    <tr><td>On the Lighter Side<br />
+                                    Your choice - with or without cheese<br />
+                                    Iceberg lettuce, tomatoes, peppers<br />
+                                    Thousand Island or Ranch<br />
+                                    Dressing Served with a dinner roll<br /></td></tr>
+                                    <tr><td>$6.95</td></tr>
+                                </table>
+                                <table class="col-lg-4 col-md-6">
+                                    <tr><th>Brisket Sandwich and Fries</th></tr>
+                                    <tr><td>A Taste of Texas!<br />
+                                    Smoked Brisket on thick-cut Texas Toast<br />
+                                    Cole Slaw<br />
+                                    Served with out famouse thick-cut french fries<br /></td></tr>
+                                    <tr><td>$7.95</td></tr>
+                            </div>
+                          <!-- Add a section to the menu for beverages -->
+
+
+
+                            <div>
+                            <table class="bev">
+                                  <tr>
+                                      <th colspan="2">Beverages</th>
+                                  </tr>
+                                  <tr>
+                                      <td>Root Beer</td>
+                                      <td>$3.00</td>
+                                  </tr>
+                                  <tr>
+                                      <td>Bottled Water</td>
+                                      <td>$1.25</td>
+                                  </tr>
+                                  <tr>
+                                      <td>Lemonade</td>
+                                      <td>$1.00</td>
+                                  </tr>
+                                  <tr>
+                                      <td>Iced Tea</td>
+                                      <td>$1.25</td>
+                                  </tr>
+                            </table>
+                            </div>
+                       </article>
+                  </section>
+
+                  <footer>
+                      <p>980 Mint Avenue Plano, TX 75075</p>
+                      <p>111-234-5678</p>
+                  </footer>
+            </main>
+          </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      </body>
+</html>
