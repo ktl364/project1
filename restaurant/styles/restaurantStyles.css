@@ -1,0 +1,91 @@
+/*
+Creator: Kevin Le
+Date created: 02/27/19
+Date last modified: 03/04/19
+*/
+
+.jumbotron {
+  background-color: #f8f4f1;
+  color: #0d1f2d;
+  border-top: thick #4a5363 solid;
+  border-bottom: thick #4a5363 solid;
+}
+
+header, footer {
+  background-color: #879981;
+  color: #fef9ff;
+  height: 150px;
+  text-align: center;
+  padding: 30px 10px 20px 10px;
+}
+
+footer {
+  padding-top: 40px;
+}
+/*Give the menu background a color other than white.*/
+/*Set the background of the home page's content - not including the header, footer, or site navigation - to a color other than white.*/
+body {
+  background-color: #f8f4f1;
+  font-family: 'Nunito', sans-serif;
+  color: #0d1f2d;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/*Style the restaurant name with a hosted or embedded font.*/
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  margin-top: 20px;
+  font-size: 3.5em;
+}
+
+section, nav {
+  margin: 0 auto;
+}
+
+section {
+  margin-top:10px;
+}
+
+nav .btn {
+  background-color: #f8f4f1;
+}
+
+nav {
+  background-color: #4a5363;
+  text-align: center;
+  max-width: 100%;
+}
+
+nav a {
+  font-size: 1.2em;
+  color: #4a5363;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  display: block; /*this makes inline elements act like a block element*/
+  margin: 20px;
+  /*float: left;*/
+}
+
+.clear-float {
+  clear:both;
+}
+
+/*Visited links appear in a different color than their default state.*/
+nav a:visited {
+  color: #1B148A;
+}
+
+/*When you hover over a link, the text is bold. This should only be when hovering. Otherwise, the text should be the normal thickness.*/
+nav a:hover {
+  font-weight:bold;
+  text-decoration: none;
+}
+
+/*Active links should not be underlined.*/
+nav a:active {
+  font-weight:bold;
+  text-decoration: none;
+}

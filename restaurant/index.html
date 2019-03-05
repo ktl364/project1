@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+Name: Kevin Le
+Date Created: 02/25/19
+Most recent revision: 03/04/19
+-->
+<!--Make sure that users who have JavaScript disabled know that this site is best viewed with JavaScript enabled.-->
+<html lang="en">
+      <head>
+            <meta charset="utf-8">
+            <meta name="vietport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <title>Home Page</title>
+            <!-- Bootstrap CDN copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <!-- link to external style sheet -->
+            <link href="styles/restaurantStyles.css" rel="stylesheet" type="text/css" />
+            <!-- link to google fonts for hosted font-->
+            <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Josefin+Sans|Nunito" rel="stylesheet">
+            <!-- link to google icon for home icon-->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <style>
+
+            </style>
+      </head>
+
+      <body>
+          <!-- Make sure that users who have JavaScript disabled know that this site is best viewed with JavaScript enabled.-->
+          <noscript>
+              <div style="border: 1px solid #4a5363; padding: 10px">
+                <span style="color:red">JavaScript is not enabled and this site is best viewed with JavaScript enabled!</span>
+              </div>
+          </noscript>
+        
+          <!--full-width container-->
+          <div class="container-fluid">
+            <main>
+                  <!--Add a Carousel that rotates with three pieces of information:
+                  We're opening a new location!
+                  We're rolling out our seasonal menu, with special options for this season.
+                  The Drink of the Month is SG Special Brew.-->
+                  <!--Use a jumbotron or page header to call out big news - your restaurant is opening a new location!-->
+                  <div id="carousel" class="carousel slide" data-ride="carousel">
+                      <div class="carousel-inner">
+                          <div class="carousel-item active">
+                              <section class="jumbotron">
+                                  <h1>BIG NEWS!</h1>
+                                  <h2>The Cozy Grill is opening a second location!</h2>
+                              </section>
+                          </div>
+                          <div class="carousel-item">
+                              <section class="jumbotron">
+                                  <h1>New this season!</h1>
+                                  <h2>We're rolling out our seasonal menu, with special options for this season.</h2>
+                              </section>
+                          </div>
+                          <div class="carousel-item">
+                              <section class="jumbotron">
+                                  <h1>Drink of the Month:</h1>
+                                  <h2>SG Special Brew</h2>
+                              </section>
+                          </div>
+                      </div>
+                  </div>
+
+                  <header>
+                      <h1>The Cozy Grill</h1>
+                  </header>
+
+                  <!--Style the site navigation so that you are using either tabs or pills.-->
+                  <!--Change the Home link to use an Icon from one of the supported fonts that looks like a house.-->
+                  <nav>
+                       <a class="btn badge-pill" href="index.html"><i class="material-icons md-dark">home</i></a>
+                       <a class="btn badge-pill" href="menu.html">Menu</a>
+                       <a class="btn badge-pill" href="contact.html">Contact Us</a>
+                       <div class="clear-float"></div>
+                  </nav>
+
+                  <!--The front page content should stack as well.-->
+                  <section>
+                       <article id="story">
+                            <!-- Apply all positioning CSS styles for the image on the home page as an inline style -->
+                            <div style="text-align:center;padding-bottom:10px;" >
+                                <img src="images/cover.jpeg" style="height:150px;width:400px;" alt="Photo of Yosemite"/>
+                            </div>
+                            <!-- Align paragraph with the image above -->
+                            <div style="margin:auto;width:400px;">
+                                <p><strong>The Cozy Grill's Story</strong><br />
+                                Welcome to The Cozy Grill! Our concept of grilling combined with comfort will take your breath away.
+                                Imagine, looking out over nature's window. Wherever it may be, you are inspired. The sounds, the smells,
+                                the ambience, everything is taken by your senses. That's where we come into play. We take what you feel and place
+                                it on a plate. We hope you enjoy our concepts of what Mother Nature has to offer.</p>
+                          </div>
+                       </article>
+                  </section>
+
+                  <footer>
+                      <p>980 Mint Avenue Plano, TX 75075</p>
+                      <p>111-234-5678</p>
+                  </footer>
+            </main>
+          </div>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      </body>
+</html>
