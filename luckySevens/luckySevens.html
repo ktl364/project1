@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script type="text/JavaScript" src="luckySevens.js"></script>
+        <meta charset="utf-8">
+        <meta name="vietport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Lucky Sevens</title>
+        <!-- Bootstrap CDN copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <style>
+            body {
+              font-family: "Comic Sans MS", cursive, sans-serif;
+            }
+            
+            header {
+              text-align: center;
+              padding-top: 100px;
+              padding-bottom: 20px;
+            }
+
+            .container {
+              text-align: center;
+            }
+
+            button {
+              margin: auto;
+            }
+
+            .inline {
+              display:inline-block;
+            }
+
+            table {
+              margin: auto;
+              border: thin black solid;
+              width: 35%;
+              text-align:left;
+            }
+
+            td {
+              padding: 5px 10px 5px;
+            }
+
+            tr:nth-child(odd) {
+              background-color: whitesmoke;
+            }
+
+            tr:nth-child(even) {
+              background-color: ghostwhite;
+            }
+        </style>
+    </head>
+
+    <body>
+    <div class="container">
+        <header>
+            <h1>Lucky Sevens</h1>
+        </header>
+
+        <section>
+            <!--form to take starting bet-->
+            <form name="bets" onsubmit="return validateItems();" onreset="resetForm();">
+                    <div>
+                        <label for="startingBet">Starting Bet:</label>
+                        <input type="float" id="startingBet" placeholder="$0.00">
+                    </div>
+                    <div class="inline">
+                        <button type="submit" id="playButton" class="btn btn-primary">Play</button><br />
+                    </div>
+                    <div class="inline">
+                        <button type="reset" id="resetButton" class="btn btn-primary" style="display:none;">Play Again?</button>
+                    </div>
+            </form> <br />
+
+            <!--table, hidden at first-->
+            <div id="showResults" style="display:none;">
+                <hr />
+                <h1>Results</h1>
+                <table border="1">
+                        <tr>
+                            <td>Starting Bet</td>
+                            <td><span id="startingBett"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Total Rolls Before Going Broke</td>
+                            <td><span id="totalRolls"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Highest Amount Won</td>
+                            <td><span id="maxMoney"></span></td>
+                        </tr>
+                        <tr>
+                            <td>Roll Count at Highest Amount Won</td>
+                            <td><span id="totalRollsAtMax"></span></td>
+                        </tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- Bootstrap CDN links for Javascript copied from https://getbootstrap.com/docs/4.1/getting-started/introduction/ -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </div>
+    </body>
+</html>
