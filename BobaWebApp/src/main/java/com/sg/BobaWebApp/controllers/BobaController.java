@@ -1,12 +1,5 @@
 package com.sg.BobaWebApp.controllers;
 
-import com.sg.BobaWebApp.dao.BobaDao;
-import com.sg.BobaWebApp.dao.LocationDao;
-import com.sg.BobaWebApp.dao.MetropolitanDao;
-import com.sg.BobaWebApp.dao.PopularDrinksDao;
-import com.sg.BobaWebApp.dao.RatingDao;
-import com.sg.BobaWebApp.dao.SpecialtyDao;
-import com.sg.BobaWebApp.dao.ToppingsDao;
 import com.sg.BobaWebApp.dto.Boba;
 import com.sg.BobaWebApp.dto.Location;
 import com.sg.BobaWebApp.dto.Metropolitan;
@@ -15,7 +8,7 @@ import com.sg.BobaWebApp.dto.Specialty;
 import com.sg.BobaWebApp.dto.Toppings;
 import com.sg.BobaWebApp.dto.US;
 import com.sg.BobaWebApp.service.BobaService;
-import java.util.ArrayList;
+import java.math.BigDecimal;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -41,24 +34,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class BobaController {
-    
-    @Autowired
-    BobaDao bobaDao;
-    
-    @Autowired
-    LocationDao locationDao;
-    
-    @Autowired
-    PopularDrinksDao popularDrinksDao;
-    
-    @Autowired
-    RatingDao ratingDao;
-    
-    @Autowired
-    SpecialtyDao specialtyDao;
-    
-    @Autowired
-    ToppingsDao toppingsDao;
     
     @Autowired
     BobaService service;
@@ -88,6 +63,12 @@ public class BobaController {
         
         List<Boba> sortByPrice = bobaCompanies.stream().sorted(Comparator.comparing(Boba::getLargeMilkTeaPrice)).collect(Collectors.toList());
         model.addAttribute("sortByPrice", sortByPrice);
+        
+        BigDecimal four = new BigDecimal(4);
+        BigDecimal five = new BigDecimal(5);
+        
+        model.addAttribute("four", four);
+        model.addAttribute("five", five);
 
         return "boba";
     }
@@ -113,7 +94,6 @@ public class BobaController {
     
     @PostMapping("addBoba")
     public String addBoba(@ModelAttribute @Valid Boba boba, BindingResult result, HttpServletRequest request, Model model) {
-       
         //Defaults to ratingId = 2 if the user does not
         String ratingId = request.getParameter("ratingId");
         if (ratingId == null) {
@@ -208,7 +188,7 @@ public class BobaController {
             return "EditBoba";
         }
         
-        service.addBoba(boba, metropolitanName);
+        service.editBoba(boba, storeName, metropolitanName);
         
         return "redirect:/displayBoba?storeName=" + boba.getStoreName();
     }
@@ -227,14 +207,14 @@ public class BobaController {
     public String deleteBoba(String storeName) { //String metropolitan, HttpServletRequest request
         //String metro = request.getParameter("metropolitanName");
         
-        bobaDao.deleteBobaByStoreName(storeName, metropolitanName);
+        service.deleteBoba(storeName, metropolitanName);
         
         return "redirect:/boba";
     }
     
     @GetMapping("addLocation")
     public String addLocationView(Model model, String storeName) {
-        Boba boba = bobaDao.getBobaByStoreName(metropolitanName, storeName);
+        Boba boba = service.getBoba(metropolitanName, storeName);
         model.addAttribute("boba", boba);
         
         model.addAttribute("metropolitanName", metropolitanName);
@@ -254,7 +234,7 @@ public class BobaController {
         violations = validate.validate(location);
 
         if(violations.isEmpty()) {
-            locationDao.addLocation(location);
+            service.addLocation(location);
             return "redirect:/displayBoba?storeName=" + storeName;
         }
         
@@ -264,7 +244,7 @@ public class BobaController {
     @GetMapping("deleteLocation")
     public String deleteLocation(String address, String storeName) {    
 
-        locationDao.deleteLocation(address);
+       service.deleteLocation(address);
 
        return "redirect:/displayBoba?storeName=" + storeName;
     }

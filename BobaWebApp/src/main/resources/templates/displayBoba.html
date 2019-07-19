@@ -17,6 +17,16 @@ Date Last Edited: 07/12/19
           <link href="../static/css/boba.css" th:href="@{/css/boba.css}" rel="stylesheet" type="text/css" />
           <!-- link to google fonts -->
           <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Nunito&display=swap" rel="stylesheet">
+          <style>
+              html, body, mapHeight {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+              }
+              #map {
+                height: 100%;
+              }
+          </style>
       </head>
 
       <body>
@@ -35,7 +45,6 @@ Date Last Edited: 07/12/19
                             <a href="#" th:href="@{/boba}" class="nav-item nav-link" id="navLink">BACK</a>
                       </nav>
                   </div>
-
 
                   <div class="container row" id="mainBody" style="margin:0;">
                       <div class="col-md-6">
@@ -56,7 +65,6 @@ Date Last Edited: 07/12/19
                           <textarea class="form-control" id="notes" rows="5" th:text="${boba.notes}" readonly></textarea>
                       </div>
                   </div>
-
 
                   <div class="container" id="subBody">
                       <div class="row" id="sectionTitle">
@@ -79,7 +87,6 @@ Date Last Edited: 07/12/19
                               <p th:text="${topping.toppingType}"></p>
                           </div>
                       </div>
-
                  </div>
 
                  <div class="container" id="subBody">
@@ -123,13 +130,13 @@ Date Last Edited: 07/12/19
                            </div>
                       </div>
 
-                      <div id="collapse1" class="panel-collapse collapse">
+                      <div id="collapse1" class="panel-collapse collapse" style="height:100%;">
                           <div class="row" th:each="location : ${locations}">
                              <div class="col-md-9">
                                <div class="collapse-group">
                                      <a class="list-group-item" data-toggle="collapse" th:data-target="${'#locationMap' + location.id}" th:text="${location.address} + ' ' + ${location.city} + ', ' + ${location.state} + ' ' + ${location.zip}">Location</a>
                                      <div class="container collapse in" th:id="${'locationMap' + location.id}">
-                                        <div id="map"></div>
+                                          <div id="map" style="width:100%;height:350px;margin-top:2.5%;margin-botton:2.5%;"></div>
                                      </div>
                                </div>
                              </div>
@@ -140,7 +147,7 @@ Date Last Edited: 07/12/19
                       </div>
 
                       </div>
-                  </div>
+                 </div>
 
                  <div class="container" id="sectionTitle">
                       <a href="#" th:href="@{/addLocation(storeName=${boba.storeName})}" class="btn">Add a Location</a>
@@ -153,14 +160,35 @@ Date Last Edited: 07/12/19
                  <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/creaticca-creative-agency" title="Creaticca Creative Agency">Creaticca Creative Agency</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/catkuro" title="catkuro">catkuro</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div><div>Icons made by <a href="https://www.flaticon.com/authors/chanut" title="Chanut">Chanut</a> from <a href="https://www.flaticon.com/"     title="Flaticon">www.flaticon.com</a> messages.attribution.is_licensed_by <a href="http://creativecommons.org/licenses/by/3.0/"     title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
                  </div>
 
+                 <div id="indexPage">
+                     <div id="footer" style="margin-top:2.5%;">
+                         <p id="footerP">FULL STACK WEB APP</p>
+                         <p id="footerP">Boba Tracking App</p>
+                         <p id="footerP">Created By Kevin Le</p>
+                     </div>
+                 </div>
+
               </div>
           </div>
 
+          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDANLhup1vPy1Drz4WLArxr0Hse7yBrH-M&callback=myMap"></script>
+          <script type="text/javascript">
+              var map;
+              function myMap() {
+                  map = new google.maps.Map(document.getElementById('map'), {
+                      center: {lat: 29.423017, lng: -98.48527},
+                      zoom: 15,
+                      });
+                      var marker = new google.maps.Marker({
+                        position: {lat:29.423017,lng:98.48527},
+                        map: map
+                      });
+                  }
+              google.maps.event.addDomListener(window, 'load', myMap);
+          </script>
           <!-- jQuery first, then Popper.js, then Bootstrap JS -->
           <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-          <script th:src="@{/js/index.js}"></script>
-          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDANLhup1vPy1Drz4WLArxr0Hse7yBrH-M&callback=myMap"></script>
       </body>
 </html>

@@ -35,35 +35,33 @@ Date Last Edited: 07/12/19
                       <p class="alert alert-danger" th:each="error : ${errors}" th:text="${error.message}">Error message</p>
                   </div>
 
+
                   <div class="container" id="bodyUnderBar">
                       <form action="addLocation" method="POST">
 
                           <div class="form-row">
-                              <div class="form-group col-md-6">
+                              <div class="form-group col-md-12">
                                   <label for="address">Address</label>
                                   <input type="text" class="form-control" id="address" name="address" placeholder="Address">
                               </div>
-                              <div class="form-group col-md-3">
+                          </div>
+
+                          <div class="form-row">
+                              <div class="form-group col-md-6">
                                   <label for="city">City</label>
                                   <input type="city" class="form-control" id="city" name="city" placeholder="City">
                               </div>
-                              <div class="form-group col-md-3">
+                              <div class="form-group col-md-4">
                                   <label for="state">State</label>
                                   <select class="form-control" id="state" name="state">
                                     <option th:each="state : ${states}" th:text="${state}"></option>
                                   </select>
                               </div>
-                          </div>
-
-                          <div class="form-row">
-                              <div class="form-group col-md-3">
+                                <div class="form-group col-md-2">
                                   <label for="zip">Zip</label>
                                   <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip">
                               </div>
-                              <div class="form-group col-md-3">
-                                  <label for="phone">Phone</label>
-                                  <input type="phone" class="form-control" id="phone" name="phone" placeholder="Phone">
-                              </div>
+
                           </div>
 
                           <div class="form-group" id="addBobaBtn">
@@ -78,6 +76,14 @@ Date Last Edited: 07/12/19
 
                   <nav class="navbar navbar-expand-lg navbar-dark justify-content-center" style="background-color: #2A313D;">
                   </nav>
+
+                  <div id="indexPage">
+                      <div id="footer" style="margin-top:2.5%;">
+                          <p id="footerP">FULL STACK WEB APP</p>
+                          <p id="footerP">Boba Tracking App</p>
+                          <p id="footerP">Created By Kevin Le</p>
+                      </div>
+                  </div>
 
               </div>
 

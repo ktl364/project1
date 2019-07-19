@@ -123,6 +123,14 @@ public class BobaServiceLayerImpl implements BobaService{
 
     @Override
     public void editBoba(Boba boba, String storeName, String metropolitanName) {
+        List<Location> locations = locationDao.getAllLocationsInMetropolitanByStoreName(metropolitanName, storeName);
+        
+        for (Location location : locations) {
+            location.setStoreName(boba.getStoreName());
+            deleteLocation(location.getAddress());
+            addLocation(location);
+        }
+        
         bobaDao.updateBoba(boba, storeName, metropolitanName);
     }
 

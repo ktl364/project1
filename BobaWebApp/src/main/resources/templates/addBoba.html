@@ -17,12 +17,6 @@ Date Last Edited: 07/12/19
             <link href="../static/css/boba.css" th:href="@{/css/boba.css}" rel="stylesheet" type="text/css" />
             <!-- link to google fonts -->
             <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Nunito&display=swap" rel="stylesheet">
-            <style>
-                p {
-                  color: #E05757;
-                  margin: 0;
-                }
-            </style>
       </head>
 
       <body>
@@ -44,7 +38,7 @@ Date Last Edited: 07/12/19
                               <div class="col-md-9">
                                   <input type="text" class="form-control" id="storeName" name="storeName" th:field="*{storeName}"/>
                                   <div th:if="${#fields.hasErrors('storeName')}">
-                                      <p th:each="error : ${#fields.errors('storeName')}" th:text="${error}"> store name error </p>
+                                      <p id="errorText" th:each="error : ${#fields.errors('storeName')}" th:text="${error}"> store name error </p>
                                   </div>
                               </div>
                           </div>
@@ -63,7 +57,7 @@ Date Last Edited: 07/12/19
                               <div class="col-md-9">
                                   <input type="text" class="form-control" id="logoUrl" name="logoUrl" th:field=*{logoUrl}/>
                                   <div th:if="${#fields.hasErrors('logoUrl')}">
-                                      <p th:each="error : ${#fields.errors('logoUrl')}" th:text="${error}"> logo url error </p>
+                                      <p id="errorText" th:each="error : ${#fields.errors('logoUrl')}" th:text="${error}"> logo url error </p>
                                   </div>
                               </div>
                           </div>
@@ -73,7 +67,7 @@ Date Last Edited: 07/12/19
                               <div class="col-md-9">
                                   <input type="number" class="form-control currency" min="0" id="largeMilkTeaPrice" name="largeMilkTeaPrice" step="0.01" placeholder="0" th:field="*{largeMilkTeaPrice}"/>
                                   <div th:if="${#fields.hasErrors('largeMilkTeaPrice')}">
-                                      <p th:each="error : ${#fields.errors('largeMilkTeaPrice')}" th:text="${error}"> price error </p>
+                                      <p id="errorText" th:each="error : ${#fields.errors('largeMilkTeaPrice')}" th:text="${error}"> price error </p>
                                   </div>
                               </div>
                           </div>
@@ -127,6 +121,14 @@ Date Last Edited: 07/12/19
 
                       <nav class="navbar navbar-expand-lg navbar-dark justify-content-center" style="background-color: #2A313D;">
                       </nav>
+
+                      <div id="indexPage">
+                          <div id="footer" style="margin-top:2.5%;">
+                              <p id="footerP">FULL STACK WEB APP</p>
+                              <p id="footerP">Boba Tracking App</p>
+                              <p id="footerP">Created By Kevin Le</p>
+                          </div>
+                      </div>
 
                   </div>
               </div>

@@ -121,11 +121,12 @@ public class BobaDBDao implements BobaDao{
     @Override
     @Transactional
     public void updateBoba(Boba boba, String storeName, String metropolitanName) {
+       
         jdbc.update("delete from BobaToppings where storeName = ?", storeName);
         
         jdbc.update("delete from BobaSpecialty where storeName = ?", storeName);
         
-        jdbc.update("delete from MetropolitanBoba where storeName = ?", storeName);
+        //jdbc.update("delete from MetropolitanBoba where storeName = ?", storeName);
         
         jdbc.update("update Boba set storeName = ?, logoUrl = ?, ratingId = ?, largeMilkTeaPrice = ?, notes = ?, hasBeen = ? where storeName = ?",
                 boba.getStoreName(),
@@ -138,7 +139,7 @@ public class BobaDBDao implements BobaDao{
         
         insertBobaToppings(boba);
         insertBobaSpecialty(boba);
-        insertMetropolitanBoba(boba, metropolitanName);
+        //insertMetropolitanBoba(boba, metropolitanName);
     }
 
     @Override

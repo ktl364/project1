@@ -132,10 +132,6 @@ h6 {
   margin-top: 2.5% !important;
 }
 
-html, body, #mapHeight {
-  height:100%;
-}
-
 #subBody {
   margin-top: 4%;
   margin-bottom: 0%;
@@ -154,4 +150,19 @@ html, body, #mapHeight {
   font-size: 0.3em;
   padding: 0;
   padding-top: 1%;
+}
+
+#footer {
+  margin: 0;
+  color: #89D2DC;
+  font-size: 0.7em;
+}
+
+#footerP {
+  margin-bottom: 0;
+}
+
+#errorText {
+  color: #E05757;
+  margin: 0;
 }
