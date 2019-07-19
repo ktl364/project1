@@ -1,0 +1,76 @@
+<!--
+Kevin Le
+Date Created: 07/12/19
+Date Last Edited: 07/12/19
+-->
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+      <head>
+          <!-- Required meta tags -->
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+          <title>Boba Web Application</title>
+          <!-- Bootstrap CSS -->
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+          <!-- link to external style sheet -->
+          <link href="../static/css/boba.css" th:href="@{/css/boba.css}" rel="stylesheet" type="text/css" />
+          <!-- link to google fonts -->
+          <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Nunito&display=swap" rel="stylesheet">
+
+          <!-- internal style sheet for links-->
+          <style>
+              a {
+                color: #2A313D;
+              }
+              a:hover {
+                color: #89D2DC;
+                text-decoration: none !important;
+              }
+              p {
+                margin: 0;
+                color: #89D2DC;
+                font-size: 0.7em;
+              }
+          </style>
+      </head>
+
+      <body>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3" id="indexPage">
+                <div class="container">
+
+
+
+                    <div class="container">
+                        <h1>Metropolitan</h1>
+                    </div>
+
+                    <nav class="navbar navbar-expand-lg navbar-dark justify-content-center">
+                    </nav>
+
+                    <div class="container" th:each="metro : ${metropolitans}" id="metroBtnGroup" style="text-align:center;margin-top:5%;margin-bottom:5%;">
+                        <a th:text="${metro.metropolitanName}" href="#" th:href="@{/boba}"></a>
+                    </div>
+
+                    <nav class="navbar navbar-expand-lg navbar-dark justify-content-center">
+                    </nav>
+
+                    <div style="margin-top:2.5%;">
+                        <p>FULL STACK WEB APP</p>
+                        <p>Boba Tracking App</p>
+                        <p>Created By Kevin Le</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+     </body>
+</html>
